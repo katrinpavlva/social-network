@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS FollowRequests (
+    RequestID INTEGER PRIMARY KEY AUTOINCREMENT,
+    FollowerUserID INTEGER NOT NULL,
+    FollowingUserID INTEGER NOT NULL,
+    Accepted BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (FollowerUserID) REFERENCES User(UserID),
+    FOREIGN KEY (FollowingUserID) REFERENCES User(UserID)
+);

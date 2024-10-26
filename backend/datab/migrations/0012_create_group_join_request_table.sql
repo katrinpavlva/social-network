@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS GroupJoinRequests (
+  RequestId INTEGER PRIMARY KEY AUTOINCREMENT,
+  UserId INTEGER NOT NULL,
+  GroupId INTEGER NOT NULL,
+  GroupCreatorId INTEGER NOT NULL,
+  FOREIGN KEY (UserId) REFERENCES Users(UserId),
+  FOREIGN KEY (GroupId) REFERENCES Cluster(GroupId)
+  FOREIGN KEY (GroupCreatorId) REFERENCES Cluster(CreatorUserID)
+);

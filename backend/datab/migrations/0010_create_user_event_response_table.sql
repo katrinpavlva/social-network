@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS UserEventResponse (
+  ResponseID INTEGER PRIMARY KEY AUTOINCREMENT,
+  EventID INTEGER NOT NULL,
+  UserID INTEGER NOT NULL,
+  Response TEXT CHECK( Response IN ('Going', 'Not Going') ),
+  FOREIGN KEY (EventID) REFERENCES Event(EventID),
+  FOREIGN KEY (UserID) REFERENCES User(UserID)
+);
